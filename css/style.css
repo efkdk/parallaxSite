@@ -1,0 +1,529 @@
+@charset "UTF-8";
+
+._container {
+  max-width: 1430px;
+  padding: 0px 15px;
+  margin: 0 auto;
+}
+
+svg {
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.title {
+  color: #fff;
+  font-family: "Chronicle Display";
+  font-weight: 600;
+  font-size: 44px;
+  line-height: 120%;
+}
+
+.title-main {
+  text-transform: capitalize;
+  font-size: 88px;
+  margin-bottom: 30px;
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 30px;
+  font-family: "Gilroy";
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 18px;
+  letter-spacing: 0.6px;
+  line-height: 1.2;
+  color: #FBD784;
+}
+
+.label::before {
+  content: "";
+  display: block;
+  flex: 0 0 72px;
+  width: 72px;
+  height: 2px;
+  background-color: #FBD784;
+}
+
+/* Указываем box sizing */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Убираем внутренние отступы */
+
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Убираем внешние отступы */
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Выставляем основные настройки по-умолчанию для body */
+
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+button {
+  padding: 0px;
+}
+
+article > * + * {
+  margin-top: 0px !important;
+}
+
+input {
+  outline: none;
+  border: none;
+}
+
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+
+ul[class] {
+  list-style: none;
+}
+
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+
+a:not([class]) {
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  border: none;
+  background: none;
+}
+
+/* Упрощаем работу с изображениями */
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Указываем понятную периодичность в потоке данных у article*/
+
+article > * + * {
+  margin-top: 1em;
+}
+
+/* Наследуем шрифты для инпутов и кнопок */
+
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */
+
+._ibg {
+  position: relative;
+}
+
+._ibg img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+._bg {
+  position: relative;
+}
+
+._bg img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
+@font-face {
+  font-family: Gilroy;
+  font-display: swap;
+  src: url("../fonts/Gilroy-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Chronicle Display;
+  font-display: swap;
+  src: url("../fonts/Chronicle Display-Semibold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Gilroy;
+  font-display: swap;
+  src: url("../fonts/Gilroy-Extrabold.woff") format("woff");
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Gilroy;
+  font-display: swap;
+  src: url("../fonts/Gilroy-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+
+body {
+  background-color: #0B1D26;
+}
+
+.parallax {
+  min-height: 100vh;
+}
+
+.parallax .parallax__body {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0%;
+  left: 0px;
+}
+
+.parallax .parallax__body::after {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.25);
+  z-index: 1;
+}
+
+.parallax__container {
+  padding-top: 150px;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+}
+
+body {
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.article .article__content._anim-items {
+  opacity: 0;
+  transform: translate(-100%, 0%);
+  transition: opacity 0.5s, transform 0.6s;
+}
+
+.article .article__content._anim-items._active {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+.article-invert .article__content._anim-items {
+  opacity: 0;
+  transform: translate(100%, 0%);
+  transition: opacity 0.5s, transform 0.6s;
+}
+
+.article-invert .article__content._anim-items._active {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+.scroll {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.scroll__text {
+  width: -moz-fit-content;
+  width: fit-content;
+  font-family: "Gilroy";
+  font-weight: 500;
+  color: #fff;
+}
+
+.scroll__img {
+  width: 15px;
+  height: 25px;
+  flex: 0 0 15px;
+  animation: scroll 1s ease-out infinite;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateY(25%);
+  }
+
+  50% {
+    transform: translateY(0%);
+  }
+
+  100% {
+    transform: translateY(25%);
+  }
+}
+
+.parallax__images {
+  position: absolute;
+  width: 120%;
+  height: 120%;
+  top: -10%;
+  left: -10%;
+  z-index: 1;
+}
+
+.images-parallax__item {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+}
+
+.images-parallax__clouds,
+.images-parallax__mountains,
+.images-parallax__human {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0px;
+}
+.images-parallax__clouds{
+  background: url("/img/clouds.jpg") top/cover no-repeat; }
+
+.images-parallax__clouds {
+  top: -17%;
+}
+
+.images-parallax__mountains{
+  background: url("/img/mountains.png") top/cover no-repeat; }
+
+.images-parallax__mountains {
+  top: 15%;
+  z-index: 2;
+}
+
+.images-parallax__human{
+  background: url("/img/human.png") top/cover no-repeat; }
+
+.images-parallax__human {
+  top: 45%;
+  z-index: 3;
+}
+
+.articles {
+  list-style-type: none;
+  counter-reset: my-counter;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;  
+}
+
+.articles .article__content::after {
+  content: "0" counter(my-counter);
+  font-family: "Gilroy";
+  font-weight: 700;
+  position: absolute;
+  left: -3%;
+  top: -130px;
+  z-index: -1;
+  pointer-events: none;
+  counter-increment: my-counter;
+  color: rgba(255, 255, 255, 0.1);
+  font-size: 188px;
+}
+
+.article:first-child {
+  padding: 0px 0px 50px 0px;
+}
+
+.article {
+  padding: 50px 0px;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 50.5% 7% 42.5%;
+}
+
+.article__content {
+  padding-left: 100px;
+  position: relative;
+  grid-column: 1/2;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.article__text {
+  font-family: "Gilroy";
+  font-weight: 500;
+  line-height: 150%;
+  font-size: 16px;
+}
+
+.article__img {
+  margin-top: -50px;
+  grid-column: 3/3;
+  grid-row: 1/1;
+  height: 720px;
+}
+
+.article-invert {
+  grid-template-columns: 42.5% 7% 50.5%;
+}
+
+.article-invert .article__content {
+  grid-column: 3/3;
+}
+
+.article-invert .article__img {
+  grid-column: 1/2;
+}
+
+.read-more {
+  display: flex;
+  width: fit-content;
+  gap: 10px;
+  align-items: center;
+  position: relative;
+  z-index: 5;
+}
+
+.read-more__text {
+  font-family: "Gilroy";
+  color: #FBD784;
+  font-weight: 500;
+  line-height: 120%;
+}
+
+.read-more__img {
+  width: 24px;
+  flex: 0 0 24px;
+  height: 16px;
+  transition: all 0.3s ease 0s;
+}
+
+.content {
+  position: relative;
+  background-color: #0B1D26;
+  z-index: 5;
+  color: #fff;
+}
+
+.content::before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 0px;
+  width: 100%;
+  height: 300px;
+  transform: translate(0px, -100%);
+  background: linear-gradient(180deg, rgba(11, 29, 38, 0), #0b1d26);
+}
+
+@media (max-width: 1200px) {
+  .title {
+    font-size: calc(32px + 12 * (100vw - 320px) / 880);
+  }
+
+  .title-main {
+    font-size: calc(44px + 44 * (100vw - 320px) / 880);
+  }
+
+  .label {
+    font-size: calc(14px + 4 * (100vw - 320px) / 880);
+  }
+}
+
+@media (max-width: 991.98px) {
+  .article {
+    display: block;
+  }
+
+  .article .article__img {
+    display: none;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .articles .article__content::after {
+    font-size: 100px;
+    top: -70px;
+  }
+
+  .article__content {
+    padding-left: 50px !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@media (max-aspect-ratio: 3/2) {
+  .images-parallax__human {
+    background-position: 20% top;
+  }
+}
+
+@media (any-hover: hover) {
+  .read-more:hover {
+    cursor: pointer;
+  }
+
+  .read-more:hover .read-more__img {
+    transform: translateX(5px);
+  }
+}
+
+.webp .images-parallax__clouds{ background: url(../img/clouds.webp) top/cover no-repeat; }
+
+.webp .images-parallax__mountains{ background: url(../img/mountains.webp) top/cover no-repeat; }
+
+.webp .images-parallax__human{ background: url(../img/human.webp) top/cover no-repeat; }
