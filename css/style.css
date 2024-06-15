@@ -331,14 +331,14 @@ body {
   left: 0px;
 }
 .images-parallax__clouds{
-  background: url("/img/clouds.jpg") top/cover no-repeat; }
+  background: url("https://efkdk.github.io/parallaxSite/img/clouds.jpg") top/cover no-repeat; }
 
 .images-parallax__clouds {
   top: -17%;
 }
 
 .images-parallax__mountains{
-  background: url("/img/mountains.png") top/cover no-repeat; }
+  background: url("https://efkdk.github.io/parallaxSite/img/mountains.png") top/cover no-repeat; }
 
 .images-parallax__mountains {
   top: 15%;
@@ -346,7 +346,7 @@ body {
 }
 
 .images-parallax__human{
-  background: url("/img/human.png") top/cover no-repeat; }
+  background: url("https://efkdk.github.io/parallaxSite/img/human.png") top/cover no-repeat; }
 
 .images-parallax__human {
   top: 45%;
